@@ -1,4 +1,8 @@
 /**
+ * @file 二叉树的层序遍历 II
+ * @link https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/
+ */
+/**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
  *     this.val = (val===undefined ? 0 : val)
@@ -7,32 +11,33 @@
  * }
  */
 const TreeNode = require('./TreeNode');
+
 /**
  * @param {TreeNode} root
  * @return {number[][]}
  */
-const levelOrder = function(root) {
+const levelOrderBottom = function(root) {
   const result = [];
-  let level = [];
+
   if (root) {
-    let currentLevel = [root];
-    while (currentLevel.length) {
-      const len = currentLevel.length;
+    const queue = [root];
+    while (queue.length) {
+      const len = queue.length;
+      const level = [];
       for (let i = 0; i < len; i++) {
-        const node = currentLevel.shift()
+        const node = queue.shift();
         level.push(node.val);
         if (node.left) {
-          currentLevel.push(node.left);
+          queue.push(node.left);
         }
         if (node.right) {
-          currentLevel.push(node.right);
+          queue.push(node.right);
         }
       }
       result.push(level);
-      level = [];
     }
   }
-  return result;
+  return result.reverse();
 };
 
 const node15 = new TreeNode(15);
@@ -42,6 +47,5 @@ const node9 = new TreeNode(9);
 const node3 = new TreeNode(3, node9, node20);
 const node1 = new TreeNode(1);
 
-console.log(levelOrder(node3));
-console.log(levelOrder(node1));
-console.log(levelOrder(null))
+console.log(levelOrderBottom(node3))
+console.log(node1);
