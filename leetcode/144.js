@@ -29,6 +29,24 @@ const preorderTraversal = function(root) {
   return result;
 };
 
+const preorderTraversalI = (root) => {
+  const result = [];
+  if (root) {
+    const stack = [root];
+    while (stack.length) {
+      const node = stack.pop();
+      result.push(node.val);
+      if (node.right) {
+        stack.push(node.right);
+      }
+      if (node.left) {
+        stack.push(node.left);
+      }
+    }
+  }
+  return result;
+}
+
 function TreeNode(val, left, right) {
    this.val = (val===undefined ? 0 : val)
    this.left = (left===undefined ? null : left)
@@ -40,3 +58,4 @@ const node2 = new TreeNode(2, node3);
 const node1 = new TreeNode(1, null, node2);
 
 console.log(preorderTraversal(node1));
+console.log(preorderTraversalI(node1));

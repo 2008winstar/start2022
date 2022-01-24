@@ -27,3 +27,22 @@ const inorderTraversal = function(root) {
   traversal(root, result);
   return result;
 };
+
+const inorderTraversalI = (root) => {
+  const result = [];
+  const stack = [];
+  let node = root;
+
+  while (node !== null || stack.length) {
+    if (node !== null) {
+      stack.push(node);
+      node = node.left;
+    } else {
+      node = stack.pop();
+      result.push(node.val);
+      node = node.right;
+    }
+  }
+
+  return result;
+}

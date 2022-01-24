@@ -15,5 +15,18 @@
  * @return {boolean}
  */
 const isBalanced = function(root) {
+  let low = 0;
+  let high = 0;
 
+  if (root) {
+    const arr = [root];
+    while (arr.length) {
+      const len = arr.length;
+      const level = [];
+      for (let i = 0; i < len; i++) {
+        const node = arr[i];
+
+      }
+    }
+  }
 };
