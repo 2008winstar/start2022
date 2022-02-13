@@ -9,3 +9,9 @@ Array.prototype.insertFirstPosition = function (value) {
 const numbers = [0, 1, 2, 3];
 numbers.insertFirstPosition(-1);
 console.log(numbers);
+
+const iterator = numbers[Symbol.iterator]();
+for (const n of iterator) {
+  console.log(n);
+}
+console.log(iterator.next()); // { value: xxx, done: true|false }
