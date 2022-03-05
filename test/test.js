@@ -12,3 +12,10 @@ const test = (nums, k) => {
 
 test([1, 2, 3, 4, 5, 6, 7], 3);
 
+
+const test1 = (...args) => {
+  console.log(args)
+}
+
+test1(1);
+
