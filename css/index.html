@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        main {
+            float: left;
+        }
+        aside, nav {
+            float: left;
+            width: 25%;
+            overflow: hidden;
+        }
+        article {
+            float: left;
+            width: 50%;
+        }
+        .clearfix:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        /*
+         A clearfix is a class that can be added to your CSS and then to any element to ensure it fully contains its
+         floated children.
+        */
+    </style>
+</head>
+<body>
+    <header>Header</header>
+    <main>
+        <nav>Links</nav>
+        <aside>Aside content</aside>
+        <article>Document content</article>
+    </main>
+    <footer>Footer</footer>
+</body>
+</html>

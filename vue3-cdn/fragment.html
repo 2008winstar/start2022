@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+<div id="app"></div>
+<script>
+    const { defineComponent, createApp } = Vue;
+    createApp({
+      data: () => ({
+        count: 0
+      }),
+      methods: {
+        addOne() {
+          this.count += 1;
+        }
+      },
+      template: `
+          <h1>
+            This is a Vue 3 Root Element!
+          </h1>
+          <button @click="addOne">
+            Pressed {{ count }} times.
+          </button>
+      `
+    }).mount('#app');
+    // createApp(component).mount('#app');
+</script>
+</body>
+</html>
