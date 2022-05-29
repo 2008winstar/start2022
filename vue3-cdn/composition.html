@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+<div id="app"></div>
+<script>
+    const { createApp, defineComponent, setup, ref, onMounted, onUnmounted } = Vue;
+    function fetchLocation() {
+      let watcher;
+      const geoLocation = navigator.geolocation;
+      const gpsTime = ref(Date.now());
+      const coordinates = ref({
+        accuracy: 0,
+        latitude: 0,
+        longitude: 0,
+        altitude: 0,
+        altitudeAccuracy: 0,
+        heading: 0,
+        speed: 0
+      });
+
+      function setPosition(payload) {
+        gpsTime.value = payload.timestamp;
+        coordinates.value = payload.coords;
+      }
+
+      onMounted(() => {
+        if (geoLocation) {
+          watcher = geoLocation.watchPosition(setPosition);
+        }
+      });
+
+      onUnmounted(() => {
+        if (watcher) {
+          geoLocation.clearWatch(watcher);
+        }
+      });
+
+      return {
+        coordinates,
+        gpsTime
+      };
+    }
+
+    createApp({
+      setup() {
+        const { coordinates, gpsTime } = fetchLocation();
+        const formatOptions = {
+          year: 'numeric',
+          month: 'numeric',
+          day: 'numeric',
+          hour: 'numeric',
+          minute: 'numeric',
+          hour12: true
+        };
+
+        const formatDate = (date) => (new Intl.DateTimeFormat(navigator.language, formatOptions).format(date));
+        return {
+          coordinates,
+          gpsTime,
+          formatDate
+        }
+      },
+      template: `
+        <h1>My Geo Position at {{ formatDate(new Date(gpsTime)) }}</h1>
+        <ul>
+        <li>Latitude: {{ coordinates.latitude }}</li>
+        <li>Longitude: {{ coordinates.longitude }}</li><li></li>
+        </ul>
+      `
+    }).mount('#app');
+</script>
+</body>
+</html>

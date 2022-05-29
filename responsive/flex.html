@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .center-me {
+            display: flex;
+            background-color: indigo;
+            color: #ebebeb;
+            font-size: 2rem;
+            text-transform: uppercase;
+            height: 200px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu-wrap {
+            background-color: indigo;
+            margin-top: 20px;
+            padding: 20px;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .list-item {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.5rem;
+            /*margin-right: 15px;*/
+            margin: 0 auto;
+        }
+
+        .list-item:last-child {
+            /*margin-right: auto;*/
+        }
+
+        @media screen and (min-width: 1200px) {
+            .menu-wrap {
+                flex-direction: row;
+            }
+        }
+
+        .flex-wrapper {
+            margin-top: 20px;
+            background-color: indigo;
+            display: flex;
+            justify-content: space-between;
+            height: 200px;
+            width: 100%;
+        }
+
+        .flex-item {
+            border: 1px solid #ebebeb;
+            background-color: #34005b;
+            display: flex;
+            height: 100px;
+        }
+
+        .flex-one {
+            flex: 1.5 0 auto;
+        }
+
+        .flex-two,
+        .flex-three {
+            flex: 1 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="center-me">Hello, I'm centered with Flexbox!</div>
+    <div class="menu-wrap">
+        <a href="#" class="list-item">Home</a>
+        <a href="#" class="list-item">About Us</a>
+        <a href="#" class="list-item">Products</a>
+        <a href="#" class="list-item">Policy</a>
+        <a href="#" class="list-item">Contact Us</a>
+    </div>
+    <div class="flex-wrapper">
+        <div class="flex-item flex-one">I am content in the inner Flexbox 1.</div>
+        <div class="flex-item flex-two">I am content in the inner Flexbox 2.</div>
+        <div class="flex-item flex-three">I am content in the inner Flexbox 3.</div>
+    </div>
+</body>
+</html>
