@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .my-first-grid {
+            display: grid;
+            grid-gap: 20px;
+            grid-template-rows: 200px 200px;
+            grid-template-columns: 200px 200px;
+            background: #e4e4e4;
+
+        }
+
+        .grid-item-1 {
+            grid-row: 1;
+            grid-column: 1;
+        }
+
+        .grid-item-3 {
+            grid-row: 1;
+            grid-column: 2;
+        }
+
+        [class^='grid-item'] {
+            outline: 3px dashed #f90;
+            color: #333;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="my-first-grid">
+        <div class="grid-item-1">1</div>
+        <div class="grid-item-2">2</div>
+        <div class="grid-item-3">3</div>
+        <div class="grid-item-4">4</div>
+<!--        <div class="grid-item-4">5</div>-->
+    </div>
+</body>
+</html>
