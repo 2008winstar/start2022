@@ -1,19 +1,26 @@
 <template>
 <!--  <img alt="Vue logo" src="./assets/logo.png">-->
 <!--  <HelloWorld msg="Welcome to Your Vue.js App"/>-->
+  <Item />
+  <Test />
   <PlusItem v-for="item in dataList" :item="item" :key="item.id" />
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
 // import Item from './components/Item.vue'
-import PlusItem from './components/PlusItem.vue'
+import Item from '@/components/Item.vue';
+import Test from './components/TestComponent.vue';
+import PlusItem from './components/PlusItem.vue';
+import '../../sandbox/SnapshotSandBox'
 
 export default {
   name: 'App',
   components: {
     // HelloWorld
-    PlusItem
+    Item,
+    PlusItem,
+    Test
   },
   data() {
     return {
