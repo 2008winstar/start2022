@@ -1,3 +1,4 @@
+/* eslint-disable */
 class SnapshotSandBox {
   windowSnapshot = {};
   modifyPropsMap = {};
