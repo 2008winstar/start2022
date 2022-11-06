@@ -5,7 +5,9 @@
   <DefineTest />
   <Item />
   <Test />
-  <PlusItem v-for="item in dataList" :item="item" :key="item.id" />
+<!--  <PlusItem v-for="item in dataList" :item="item" :key="item.id" />-->
+  <br />
+  <FancyButton>Click me</FancyButton>
 </template>
 
 <script>
@@ -15,8 +17,9 @@ import DefineTest from '@/components/DefineTest';
 import Component from '@/components/Component';
 import Item from '@/components/Item.vue';
 import Test from './components/TestComponent.vue';
-import PlusItem from './components/PlusItem.vue';
+// import PlusItem from './components/PlusItem.vue';
 import '../../sandbox/SnapshotSandBox'
+import FancyButton from '@/slots/FancyButton';
 
 export default {
   name: 'App',
@@ -25,8 +28,9 @@ export default {
     MyComponent: Component,
     DefineTest,
     Item,
-    PlusItem,
-    Test
+    // PlusItem,
+    Test,
+    FancyButton
   },
   data() {
     return {

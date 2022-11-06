@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="init()">
+    <canvas id="canvas" width="400" height="300"></canvas>
+    <script>
+        var cwidth = 400;
+        var cheight = 300;
+        var dicex = 50;
+        var dicey = 50;
+        var diceWidth = 100;
+        var diceHeight = 100;
+        var dotrad = 6;
+        var ctx;
+
+        function init() {
+          var ch = 1 + Math.floor(Math.random() * 6);
+          drawFace(ch);
+        }
+
+        function drawFace(n) {
+          ctx = document.getElementById('canvas').getContext('2d');
+          ctx.lineWidth = 5;
+          ctx.clearRect(dicex, dicey, diceWidth, diceHeight);
+          ctx.strokeRect(dicex, dicey, diceWidth, diceHeight);
+          ctx.fillStyle= '#096';
+          draw1();
+
+          switch (n) {
+            case 1:
+              draw1();
+              break;
+          }
+          ctx.stroke();
+        }
+
+        function draw1() {
+          var dotx;
+          var doty;
+          ctx.beginPath();
+          dotx = dicex + 0.5 * diceWidth;
+          doty = dicey + 0.5 * diceHeight;
+          ctx.arc(dotx, doty, dotrad, 0, Math.PI * 2, true)
+        }
+    </script>
+</body>
+</html>

@@ -24,6 +24,7 @@ const onClickHelp = () => {
 };
 const toggle = () => {
   data.patternVisible = !data.patternVisible;
+  aboutExeVisible.value = false;
 }
 </script>
 
