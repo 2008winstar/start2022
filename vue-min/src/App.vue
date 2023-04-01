@@ -1,37 +1,15 @@
 <template>
-<!--  <img alt="Vue logo" src="./assets/logo.png">-->
-<!--  <HelloWorld msg="Welcome to Your Vue.js App"/>-->
   <MyComponent />
-  <DefineTest />
-  <Item />
-  <Test />
-<!--  <PlusItem v-for="item in dataList" :item="item" :key="item.id" />-->
-  <br />
-  <FancyButton>Click me</FancyButton>
-  <div v-change-color="color">{{message}}</div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-// import Item from './components/Item.vue'
-import DefineTest from '@/components/DefineTest';
 import Component from '@/components/Component';
-import Item from '@/components/Item.vue';
-import Test from './components/TestComponent.vue';
-// import PlusItem from './components/PlusItem.vue';
 import '../../sandbox/SnapshotSandBox'
-import FancyButton from '@/slots/FancyButton';
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld
-    MyComponent: Component,
-    DefineTest,
-    Item,
-    // PlusItem,
-    Test,
-    FancyButton
+    MyComponent: Component
   },
   data() {
     return {
